@@ -1,1 +1,1 @@
-{"index_key": "HNSW15", "index_param": "efSearch=2061", "size in bytes": 15264530, "avg_search_speed_ms": 8.885573333333063, "99p_search_speed_ms": 13.016604720005489, "reconstruction error %": 0.0, "nb vectors": 6989, "vectors dimension": 512, "compression ratio": 0.9376949044615196}
+{"index_key": "HNSW15", "index_param": "efSearch=2320", "size in bytes": 15262350, "avg_search_speed_ms": 14.274273306706196, "99p_search_speed_ms": 36.77044600010504, "reconstruction error %": 0.0, "nb vectors": 6988, "vectors dimension": 512, "compression ratio": 0.9376946538377118}

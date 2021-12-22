@@ -29,15 +29,16 @@ def tagging_image(path):
     faces = detector.detect_faces(image)
     print("Results:")
     for face in faces:
-        bounding_box = face['box']
-        cv2.rectangle(image,(bounding_box[0], bounding_box[1]), 
-                    (bounding_box[0]+bounding_box[2], bounding_box[1]+bounding_box[3]), 
-                    (0,204,0),2)
-        crop_img = im.crop((bounding_box[0], bounding_box[1],
-                            bounding_box[0]+bounding_box[2], bounding_box[1]+bounding_box[3]))
-        name = search_face(crop_img)
-        cv2.putText(image,name, (bounding_box[0], bounding_box[1]),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+        if face['confidence'] > 0.8:
+            bounding_box = face['box']
+            cv2.rectangle(image,(bounding_box[0], bounding_box[1]), 
+                        (bounding_box[0]+bounding_box[2], bounding_box[1]+bounding_box[3]), 
+                        (0,204,0),2)
+            crop_img = im.crop((bounding_box[0], bounding_box[1],
+                                bounding_box[0]+bounding_box[2], bounding_box[1]+bounding_box[3]))
+            name = search_face(crop_img)
+            cv2.putText(image,name, (bounding_box[0], bounding_box[1]),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
     print("---------------")
     img = ResizeWithAspectRatio(image, width=640)
     cv2.imshow("Face Recognition", img)
@@ -45,10 +46,10 @@ def tagging_image(path):
 
 # TEST
 # Test with folder test
-# image_folder_in = "./data/test/"
-# for image_name in os.listdir(image_folder_in):
-#             image_path = os.path.join(image_folder_in,image_name)
-#             tagging_image(image_path)
+image_folder_in = "./data/test/"
+for image_name in os.listdir(image_folder_in):
+            image_path = os.path.join(image_folder_in,image_name)
+            tagging_image(image_path)
         
 # Test with one image, please uncomment line under: 
-tagging_image("./data/test/20.jpeg")
+# tagging_image("./data/test/5.jpg")
