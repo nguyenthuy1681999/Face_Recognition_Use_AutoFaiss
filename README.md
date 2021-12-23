@@ -7,4 +7,4 @@ Link file tran.rar contains image dataset: https://drive.google.com/file/d/1qDpG
 
 Link code creat KNN index on Google Colab: https://colab.research.google.com/drive/11BzQ8_l0x-6TmR1G1-EwTJi-Vi0SxtRW?usp=sharing
 
-Link post face recognition use autofaiss: 
+Link post face recognition use autofaiss: https://viblo.asia/p/nhan-dien-khuon-mat-su-dung-knn-autofaiss-RQqKLBBzl7z#_31-tap-anh-co-so-du-lieu-5
